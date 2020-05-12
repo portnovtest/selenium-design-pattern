@@ -1,0 +1,4 @@
+# Project exclude paths
+/target/
+/selenium-design-pattern.iml
+/.idea/
