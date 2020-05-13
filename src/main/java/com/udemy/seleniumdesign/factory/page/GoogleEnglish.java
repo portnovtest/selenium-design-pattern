@@ -1,4 +1,4 @@
-package com.udemy.seleniumdesign.factory;
+package com.udemy.seleniumdesign.factory.page;
 
 import com.google.common.util.concurrent.Uninterruptibles;
 import org.openqa.selenium.WebDriver;
