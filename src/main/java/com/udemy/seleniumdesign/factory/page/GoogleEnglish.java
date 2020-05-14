@@ -37,6 +37,7 @@ class GoogleEnglish extends GooglePage {
 
     @Override
     public void search(String keyword) {
+        this.searchBox.click();
         for (char ch : keyword.toCharArray()) {
             Uninterruptibles.sleepUninterruptibly(5, TimeUnit.MILLISECONDS);
             this.searchBox.sendKeys(ch + "");

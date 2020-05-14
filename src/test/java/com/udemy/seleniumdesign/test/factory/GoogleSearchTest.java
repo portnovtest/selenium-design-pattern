@@ -1,38 +1,14 @@
 package com.udemy.seleniumdesign.test.factory;
 
-import com.google.common.util.concurrent.Uninterruptibles;
-import com.udemy.seleniumdesign.factory.driver.DriverManager;
-import com.udemy.seleniumdesign.factory.driver.DriverManagerFactory;
-import com.udemy.seleniumdesign.factory.driver.DriverType;
 import com.udemy.seleniumdesign.factory.page.GoogleFactory;
 import com.udemy.seleniumdesign.factory.page.GooglePage;
 import com.udemy.seleniumdesign.test.BaseTest;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.*;
-
-import java.util.concurrent.TimeUnit;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 public class GoogleSearchTest extends BaseTest {
 
-    DriverManager driverManager;
-    WebDriver driver;
     private GooglePage googlePage;
-
-    @BeforeTest
-    public void beforeTest(){
-        driverManager = DriverManagerFactory.getManager(DriverType.SAFARI);
-    }
-
-    @BeforeMethod
-    public void beforeMethod(){
-        driver = driverManager.getDriver();
-    }
-
-    @AfterMethod
-    public void afterMethod(){
-        driverManager.quitDriver();
-        Uninterruptibles.sleepUninterruptibly(3, TimeUnit.SECONDS);
-    }
 
     @Test(dataProvider = "getData")
     public void searchTest(String language, String keyword) {

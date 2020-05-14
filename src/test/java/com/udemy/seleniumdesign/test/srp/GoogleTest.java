@@ -14,16 +14,13 @@ public class GoogleTest extends BaseTest {
     private GoogleResultPage googleResultPage;
 
     @BeforeTest
-    public void setupPages(){
+    public void setupPages() {
         this.googleMainPage = new GoogleMainPage(driver);
         this.googleResultPage = new GoogleResultPage(driver);
     }
 
     @Test(dataProvider = "getData")
-    public void googleWorkflow(String keyword, int index){
-
-        //String keyword = "selenium webdriver";
-        //int index = 3;
+    public void googleWorkflow(String keyword, int index) {
 
         googleMainPage.goTo();
         Assert.assertTrue(googleMainPage.getSearchWidget().isDisplayed());
@@ -44,7 +41,7 @@ public class GoogleTest extends BaseTest {
     }
 
     @DataProvider
-    public Object[][] getData(){
+    public Object[][] getData() {
         return new Object[][]{
                 {"selenium", 3},
                 {"docker", 2}
