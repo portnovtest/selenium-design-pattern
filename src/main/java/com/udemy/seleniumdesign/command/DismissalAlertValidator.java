@@ -21,7 +21,7 @@ public class DismissalAlertValidator extends ElementValidator {
         try {
             result2 = this.dismissalAlert.isDisplayed(); // false
         } catch (NoSuchElementException e) {
-            e.printStackTrace();
+            // do nothing
         }
         return result1 && (!result2);
     }

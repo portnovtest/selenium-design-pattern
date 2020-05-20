@@ -6,7 +6,6 @@ import org.openqa.selenium.safari.SafariDriverService;
 import org.openqa.selenium.safari.SafariOptions;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 public class SafariDriverManager extends DriverManager {
 
@@ -39,7 +38,5 @@ public class SafariDriverManager extends DriverManager {
         SafariOptions options = new SafariOptions();
         capabilities.setCapability(SafariOptions.CAPABILITY, options);
         driver = new SafariDriver(saService, options);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
     }
 }

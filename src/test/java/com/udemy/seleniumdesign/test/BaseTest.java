@@ -12,7 +12,7 @@ public class BaseTest {
 
     @BeforeTest
     public void beforeTest() {
-        driver = DriverFactory.getDriver(DriverType.SAFARI);
+        driver = DriverFactory.getDriver(DriverType.CHROME);
     }
 
     @AfterTest
